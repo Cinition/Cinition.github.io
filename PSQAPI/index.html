@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <script>
+            var imageCount = 6
+
+            function prev() {
+                var index = document.getElementsByClassName("ImageShow")[0].id
+                
+                document.getElementById(index).classList.remove("ImageShow")
+                document.getElementById(index).classList.add("ImageHide")
+
+                if (index == 1) {
+                    index = Number(imageCount)
+                } else {
+                    index = Number(index) - Number(1)
+                }
+
+                console.log(index)
+                
+                document.getElementById(index).classList.remove("ImageHide")
+                document.getElementById(index).classList.add("ImageShow")
+            }
+
+            function next() {
+                var index = document.getElementsByClassName("ImageShow")[0].id
+                
+                document.getElementById(index).classList.remove("ImageShow")
+                document.getElementById(index).classList.add("ImageHide")
+
+                if (index == imageCount) {
+                    index = Number(1)
+                } else {
+                    index = Number(index) + Number(1)
+                }
+
+                console.log(index)
+                
+                document.getElementById(index).classList.remove("ImageHide")
+                document.getElementById(index).classList.add("ImageShow")
+            }
+        </script>
+    </head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .ImageHolder {
+            width: 800;
+            height: 450;
+            overflow: hidden;
+        }
+
+        .ImageShow {
+            display: block;
+        }
+
+        .ImageHide {
+            display: none;
+        }
+
+        .ButtonHolder {
+            position: absolute;
+            top: 0;
+            width: 800;
+            height: 450;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .Button {
+            font-size: 5em;
+            margin: 5%;
+        }
+
+        .Button:hover {
+            cursor: pointer;
+        }
+    </style>
+    <body>
+        <div class="ImageHolder">
+            <div id="1" class="ImageShow">
+                <img height="450" width="800" src="images/1.jpg">
+            </div>
+            <div id="2" class="ImageHide">
+                <img height="450" width="800" src="images/2.jpg">
+            </div>
+            <div id="3" class="ImageHide">
+                <img height="450" width="800" src="images/3.jpg">
+            </div>
+            <div id="4" class="ImageShow">
+                <img height="450" width="800" src="images/4.jpg">
+            </div>
+            <div id="5" class="ImageHide">
+                <img height="450" width="800" src="images/5.jpg">
+            </div>
+            <div id="6" class="ImageHide">
+                <img height="450" width="800" src="images/6.jpg">
+            </div>
+        </div>
+        <div class="ButtonHolder">
+            <a id="prev" class="button" onclick="prev()">&#60</a>
+            <a id="next" class="button" onclick="next()">&#62</a>
+        </div>
+    </body>
+</html>

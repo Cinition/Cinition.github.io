@@ -1,108 +1,332 @@
 <html>
     <head>
-        <script>
-            var imageCount = 6
-
-            function prev() {
-                var index = document.getElementsByClassName("ImageShow")[0].id
-                
-                document.getElementById(index).classList.remove("ImageShow")
-                document.getElementById(index).classList.add("ImageHide")
-
-                if (index == 1) {
-                    index = Number(imageCount)
-                } else {
-                    index = Number(index) - Number(1)
-                }
-
-                console.log(index)
-                
-                document.getElementById(index).classList.remove("ImageHide")
-                document.getElementById(index).classList.add("ImageShow")
-            }
-
-            function next() {
-                var index = document.getElementsByClassName("ImageShow")[0].id
-                
-                document.getElementById(index).classList.remove("ImageShow")
-                document.getElementById(index).classList.add("ImageHide")
-
-                if (index == imageCount) {
-                    index = Number(1)
-                } else {
-                    index = Number(index) + Number(1)
-                }
-
-                console.log(index)
-                
-                document.getElementById(index).classList.remove("ImageHide")
-                document.getElementById(index).classList.add("ImageShow")
-            }
-        </script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="shortcut icon" type="image/png" href="CSS/Logo.svg"/>
+        <link rel="stylesheet" type="text/css" href="CSS/portfolio.css">
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.2/css/all.css">
     </head>
-    <style>
-        body {
-            margin: 0;
-        }
-
-        .ImageHolder {
-            width: 800;
-            height: 450;
-            overflow: hidden;
-        }
-
-        .ImageShow {
-            display: block;
-        }
-
-        .ImageHide {
-            display: none;
-        }
-
-        .ButtonHolder {
-            position: absolute;
-            top: 0;
-            width: 800;
-            height: 450;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .Button {
-            font-size: 5em;
-            margin: 5%;
-        }
-
-        .Button:hover {
-            cursor: pointer;
-        }
-    </style>
     <body>
-        <div class="ImageHolder">
-            <div id="1" class="ImageShow">
-                <img height="450" width="800" src="images/1.jpg">
+        <div id="Navbar" class="Navbar">
+            <img class="Navbar_Img" id="NavBarLogo" src="CSS/Logo.svg">
+            <a id="MobileNavButton" class="MobileHamburger"><i class="fas fa-bars"></i></a>
+            <div id="NavLinks" class="Navbar_Link">
+                <p id="L1" class="noselect">Homepage</p>
+                <p id="L2" class="noselect">About me</p>
+                <p id="L3" class="noselect">Portfolio</p>
             </div>
-            <div id="2" class="ImageHide">
-                <img height="450" width="800" src="images/2.jpg">
-            </div>
-            <div id="3" class="ImageHide">
-                <img height="450" width="800" src="images/3.jpg">
-            </div>
-            <div id="4" class="ImageShow">
-                <img height="450" width="800" src="images/4.jpg">
-            </div>
-            <div id="5" class="ImageHide">
-                <img height="450" width="800" src="images/5.jpg">
-            </div>
-            <div id="6" class="ImageHide">
-                <img height="450" width="800" src="images/6.jpg">
+            <div class="Navbar_Social">
+                <a href="https://github.com/Cinition"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/DoggoBuoy"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/cornee-nieuwenhuis-64244ab8/"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-        <div class="ButtonHolder">
-            <a id="prev" class="button" onclick="prev()">&#60</a>
-            <a id="next" class="button" onclick="next()">&#62</a>
+        <div id="TransitionScreen" class="TransitionScreen"></div>
+        <div id="S1" class="Screen">
+            <div id="NameTransition"></div>
+            <div class="NameHolder">
+                <span class="Name">
+                    <span id="Fullname">Cornee Nieuwenhuis</span>
+                    <div id="Introduction" class="Introduction">
+                        <p id="Hi">Hi,</p>
+                        <p id="Iam">I am</p>
+                    </div>
+                    <div id="Subtitle" class="Subtitle">
+                        <p>Game Developer - Application Developer - Web Developer</p>
+                    </div>
+                </span>
+            </div>
         </div>
+        <div id="S2" class="Screen">
+            <div class="About_Me">
+                <div class="About_Screen">
+                    <p class="Text_Title">About me</p>
+                    <p class="About_Me-text">Hi, I am Cornee as I have mentioned in the homepage already. I am new to the whole freelance shabang of programming which makes it even more exciting. But more about me, I'm from the Netherlands and have loved computers my whole life but was never set on programming until I finally got to understand that it was the way for me to express myself. I also like <a class="outlink" href="http://www.onemillionpats.com/" target="_blank">dogs</a>, like alot alot.</p>
+                    <p class="About_Me-text" style="margin-top: 5%;">My main focus is programming applications but I dabble in website production and design as well, so if you have a request that you would like me to work on, <a class="outlink" onclick="changeScreen(document.getElementById('L4'))">Click here!</a></p>
+                </div>
+                <div class="About_Screen">
+                    <img id="MeImg" class="About_Me_Img">
+                </div>
+            </div>
+        </div>
+        <div id="S3" class="Screen">
+            <div class="Portfolio">
+                <div id="ParentProjects" class="Projects">
+                    <h1 class="PortfolioTitle">Some of my work</h1>
+                    <h1 class="PortfolioSubTitle">It ain't much but it's honest work</h1>
+                    <h1 class="PortfolioTextTitle">Application Development</h1>
+                    <div class="Project">
+                        <div class="Picture">
+                            <img id="Img">
+                        </div>
+                        <div class="Text">
+                            <h1>Old Discord Bot</h1>
+                            <p>
+                                The Discord bot was made for the discord server me and my friends have. 
+                                The reason for making my own instead of using any of the other thousands of discord bots was that the one we selected seemed to join, 
+                                leave or change songs at random. We searched for a short time until I suggested that I could create one myself, and so, 
+                                this project arose from the ground with "BuoyBot" my nickname between friends + bot v1. I wasn't satisfied with the first one because the coding was all over the place. 
+                                so I decided to create "BetterBuoyBot" the better and v2 of "Buoybot"
+                            </p>
+                        </div>
+                    </div>
+                    <h1 class="PortfolioTextTitle">Game Development Projects</h1>
+                    <div class="Project Reverse">
+                        <div class="Picture">
+                            <img id="Img">
+                        </div>
+                        <div class="Text">
+                            <h1>Subaquatic Secrets</h1>
+                            <p>
+                                Subaquatic Secrets is a underwater exploration game, where you control a submersible through deep and vast oceans to discover dangers but also marvels of those deep oceans. 
+                                The game has tasks that guide the player through the level, but loosely as to emphasize the exploration and non-restrictiveness of the levels. <br><br>
+                            </p>
+                                <a class="HueText" target="_blank" href="https://portal.playgroundsquad.com/spelprojekt/group3-project-name/">More Information about Subaquatic Secrets</a>
+                        </div>
+                    </div>
+                    <div class="Project">
+                        <div class="Picture">
+                            <img id="Img">
+                        </div>
+                        <div class="Text">
+                            <h1>Heliotrope</h1>
+                            <p>
+                                Heliotrope is a third-person 3D puzzle platformer. While venturing into an imposingly beautiful canyon landscape, the player will be forced to use their cunning, 
+                                creativity and coordination to reach their goal of gathering three enchanted gems that will unlock a mysterious tomb. To aid them in their quest, 
+                                the player has the ability to conjure magical crystal pillars that grow out from the environment. 
+                                These pillars act as multipurpose platforms that can help the player bypass traps, navigate the environment and outsmart puzzles.<br><br>
+                                <a class="HueText" target="_blank" href="https://portal.playgroundsquad.com/spelprojekt/group3-project-name/">More Information about Heliotrope</a>
+                            </p>
+                        </div>
+                    </div>
+                    <h1 class="PortfolioTextTitle">Some Web Development</h1>
+                    <div id="Project" class="Project">
+                        <div class="Picture">
+                            <img id="Img" src="GIF/Calendar.gif">
+                        </div>
+                        <div class="Text">
+                            <h1>Javascript Calendar</h1>
+                            <p>
+                                The Javascript Calendar was one of my favourite personal projects to do. My group had to make a webapplication for a resort booking company for a school assignment.
+                                I was responsible for the booking page, and I went all out. I looked around the web for calendars that are selectable and nice to look at, but couldn't find any, 
+                                so I decided to start develop my own. This calendar took me 4 week to create with over 300 lines of Javascript
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Project Reverse">
+                        <div class="Picture">
+                            <img id="Img" src="GIF/TWA.gif">
+                        </div>
+                        <div class="Text">
+                            <h1>Twentse Wens Ambulance</h1>
+                            <p>
+                                This is another assignment I got through school, but this time it was for an actual customer/company instead of a fake one. 
+                                For this assignment we worked together with our target audience, the students of the Health department. For this project I got a new group to work with, 
+                                which was like a breath of fresh air because we weren't used to one another everyone gave a different input towards the application. 
+                                In the end we couldn't fully finish due to complications of hosting but we had a blast making it.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Project">
+                        <div class="Picture">
+                            <img id="Img" src="GIF/RTR.gif">
+                        </div>
+                        <div class="Text">
+                            <h1>Rail Terminal Rzepin</h1>
+                            <p>
+                                This was a project for my families company. The objective was to create a simple but intising website. As shown in the GIF, 
+                                when you enter the site you are welcomed by a carousel of pictures which shows what the company is about. 
+                                Many more features are planned but haven't been finilized yet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="S4" class="Screen">
+            <div class="Contact">
+                <div>
+                    <p class="ContactTitle">Contact me</p>
+                    <div class="ContactSplit">
+                        <form id="form" class="ContactDiv">
+                            <div class="ContactForm">
+                                <div class="ContactContext">
+                                    <p>Title</p>
+                                </div>
+                                <input class="form" type="text" name="name">
+                                <div class="ContactContext">
+                                    <p>Email</p>
+                                </div>
+                                <input class="form" type="text" name="mail">
+                                <div class="ContactContext">
+                                    <p>Message</p>
+                                </div>
+                                <textarea class="formarea" name="message" rows="7"></textarea>
+                            </div>
+                            <input id="submitbutton" class="formsubmit" type="submit" name="submit" value="Send">
+                            <a class="ElseMail" href="mailto:cornee.n@gmail.com">Else, launch mailing program of choice</a> 
+                        </form>
+                        <div class="ContactReason">
+                            <p class="ReasonTitle">Reasons for contacting me</p>
+                            <ul class="ContactReasons">
+                                <li>You have a project idea that you would like to have created</li>
+                                <li>You just want to say hi or want to message me</li>
+                                <li>Or you just want a doggo picture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div id="LastReady"></div>
     </body>
+    <!-- Jquery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Transition Scripts -->
+    <script>
+        function changeScreen(event) {
+            console.log(event)
+            var elements = document.getElementsByClassName("Screen")
+            for (let i = 0; i < elements.length; i++) {
+                if (elements[i].id[1] == event.id[1]) {
+                    transition(event.id[1]);
+                } else {
+                    setTimeout(function() {
+                        document.getElementById("S" + elements[i].id[1]).classList.remove("ActiveScreen")
+                        document.getElementById("L" + elements[i].id[1]).classList.remove("ActiveLink")
+                    }, 500)
+                }
+            }
+        }
+        function transition(id) {
+            const screen = document.getElementsByClassName("TransitionScreen")[0];
+            if ($(window).outerWidth() < 900) {
+                screen.classList.add("mobiletransition")
+            } else {
+                screen.classList.add("transition")
+            }
+            removeEventListeners();
+            setTimeout(function() {
+                document.getElementById("S" + id).classList.add("ActiveScreen")
+                document.getElementById("L" + id).classList.add("ActiveLink")
+                if (id == 4) {
+                    AdjustMargin()
+                }
+                setTimeout(function() {
+                    if ($(window).outerWidth() < 900) {
+                        screen.classList.remove("mobiletransition")
+                    } else {
+                        screen.classList.remove("transition")
+                    }
+                    addEventListeners();
+                }, 500)
+            }, 500)
+        }
+        function startTransition(id) {
+            const screen = document.getElementsByClassName("TransitionScreen")[0];
+            const navbar = document.getElementsByClassName("Navbar")[0];
+            const navbarlogo = document.getElementById("NavBarLogo");
+            typewriter()
+            navbar.classList.add("startnavbar")
+            navbarlogo.classList.add("navbarlogo")
+            document.getElementById("S1").classList.add("ActiveScreen")
+            setTimeout(function() {
+                navbar.classList.remove("startnavbar")
+                navbarlogo.classList.remove("navbarlogo")
+                document.getElementById("L1").classList.add("ActiveLink")
+                setTimeout(function() {
+                    screen.classList.remove("start")
+                    addEventListeners();
+                }, 500)
+            }, 1000)
+        }
+        if ($(window).width() > 900) {
+            startTransition("L1")
+        } else {
+            typewriter()
+            document.getElementById("S1").classList.add("ActiveScreen")
+            addEventListeners();
+        }
+        function getEvent(event) {
+            changeScreen(event.target)
+        }
+        function addEventListeners() {
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById("L" + i).addEventListener("click", getEvent) 
+            }
+        }
+        function removeEventListeners() {
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById("L" + i).removeEventListener("click", getEvent)
+            }
+        }
+        function typewriter() {
+            document.getElementById("Hi").classList.add("hityping")
+            document.getElementById("Iam").classList.add("iamtyping")
+            setTimeout(function() {
+                document.getElementById("Hi").classList.remove("hityping")
+                setTimeout(function() {
+                    document.getElementById("Iam").classList.remove("iamtyping")
+                    document.getElementById("NameTransition").classList.add("nametransition")
+                    setTimeout(function() {
+                        document.getElementById("Fullname").style.backgroundColor = "rgb(183,31,69)"
+                        setTimeout(function() {
+                            document.getElementById("NameTransition").classList.remove("nametransition")
+                        }, 1000)
+                    }, 500)
+                }, 1000)
+            }, 500)
+        }
+    </script>
+    <!-- Randomizer for about me doggo picture -->
+    <!-- <script>
+        var number = 1 + Math.floor(Math.random() * 2);
+        number = 69;
+        switch (number) {
+            case 1:
+                $("#MeImg").attr("src","/IMG/1.png")
+                break;
+            case 2:
+                $("#MeImg").attr("src","/IMG/2.png")
+                break;
+            default:
+                $("#MeImg").attr("src","/IMG/me.jpg")
+                break;
+        }
+    </script> -->
+    <!-- Responsiveness script -->
+    <script>
+        function AdjustMargin() {
+            $("#Introduction").css("top", -($("#Introduction").height()));
+            $("#Subtitle").css("bottom", -($("#Subtitle").height()));
+            $("#NameTransition").height($("#Fullname").height());
+            console.log($("#submitbutton").width() + $("#form").width())
+            $("#submitbutton").css("left", (($("#form").width() / 2) - ($("#submitbutton").width() / 2)))
+            if ($(window).width() < 900) {
+                //Suggest to rotate for better experience
+                $("#NavBarLogo").css("left", (($("#Navbar").width() / 2) - ($("#NavBarLogo").width() / 2)))
+                $("#NameTransition").css("top", ((($(window).height() / 100 * 90) / 2) - ($("#Fullname").height() / 2)));
+            } else {
+                $("#NameTransition").css("top", (($(window).height() / 2) - ($("#Fullname").height() / 2)));
+            }
+        }
+        $("#LastReady").ready(AdjustMargin);
+        $(window).resize(AdjustMargin);
+    </script>
+    <!-- Mobile Navigation Toggler -->
+    <script>
+        $("#MobileNavButton").on("click", function() {
+            $("#NavLinks").toggleClass("ActiveNav")
+            if ($("#NavLinks").hasClass("ActiveNav")) {
+                $("#Navbar").css("height", ($("#Navbar").height() + $("#NavLinks").outerHeight()))
+            } else {
+                $("#Navbar").css("height", "10vh")
+            }
+        });
+    </script>
+    <!-- Transition screen moves with scrolling -->
+    <script>
+        $(window).scroll(function() {
+            $("#TransitionScreen").css("top",$(window).scrollTop())
+        });
+    </script>
 </html>

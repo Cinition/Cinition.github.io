@@ -1,0 +1,697 @@
+:root {
+    --PrimaryHue--: #bb1c44;
+    --SecondaryHue--: #570f61;
+    --navbar--: #303030;
+    --background--:#242424;
+    --text--:#DADADA;
+}
+
+@font-face { font-family: Quicksand; src: url('../Fonts/Quicksand_Book.otf'); }
+
+body {
+    background-color: var(--background--);
+    font-family: Quicksand;
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+}
+
+.HueText {
+    color: var(--PrimaryHue--);
+}
+
+.Navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100vh;
+    background-color: var(--navbar--);
+    z-index: 10;
+    padding: 25px 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-box-shadow: 10px 0px 10px 0px rgba(0,0,0,0.50);
+    -moz-box-shadow: 10px 0px 10px 0px rgba(0,0,0,0.50);
+    box-shadow: 10px 0px 10px 0px rgba(0,0,0,0.50);
+    overflow: auto;
+}
+
+.Navbar_Img {
+    /* width: 66%; */
+}
+
+.Navbar_Link {
+    margin: 25px 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Navbar_Link p {
+    color: var(--text--);
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+    position: relative;
+}
+.Navbar_Link p::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    left: 50%;
+    top: 30;
+    background-color: var(--PrimaryHue--);
+    transition: width 0.25s, left 0.25s;
+}
+.Navbar_Link p:hover::after {
+    width: 100%;
+    left: 0;
+}
+.Navbar_Link p:hover {
+    cursor: pointer;
+}
+
+.Navbar_Link p:last-child {
+    margin-bottom: 0;
+}
+
+.Navbar_Social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Navbar_Social a{
+    color: var(--text--);
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    margin: 15px;
+}
+.Navbar_Social a:hover {
+    cursor: pointer;
+    -webkit-filter: drop-shadow(0px 4px 1px var(--PrimaryHue--));      
+    filter: drop-shadow(0px 4px 1px var(--PrimaryHue--)); 
+    /* color: var(--select--) */
+}
+.Navbar_Social a:last-child {
+    margin-bottom: 0;
+}
+
+.MobileHamburger {
+    display: none;
+    color: white;
+    float: right;
+    font-size: 5vh;
+    margin-right: 5%;
+    margin-top: 2.5vh;
+    text-align: center;
+}
+
+.Screen {
+    height: 100%;
+    width: calc(100vw - 150px);
+    margin: 0 0 0 150px;
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .Navbar {
+        position: fixed;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: unset;
+        top: 0;
+        height: 10vh;
+        width: 100%;
+        z-index: 10;
+        padding: 0;
+        background-color: var(--navbar--);
+        -webkit-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.50);
+        -moz-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.50);
+        box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.50);
+    }
+    .Navbar_Img {
+        position: absolute;
+        height: 8vh;
+        top: 1vh;
+        left: 0;
+    }
+    .Navbar_Link {
+        -webkit-box-shadow: inset 0px 10px 10px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: inset 0px 10px 10px 0px rgba(0,0,0,0.5);
+        box-shadow: inset 0px 10px 10px 0px rgba(0,0,0,0.5);
+        position: absolute;
+        top: -200;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--PrimaryHue--);
+        padding: 2.5% 0 2.5% 0;
+        margin: 0;
+        font-size: 3vh;
+        color: var(--text--);
+    }
+    .Navbar_Social {
+        display: none;
+    }
+    .Screen {
+        margin: 10vh 0 0 0;
+        width: 100%;
+        height: 90vh;
+    }
+    .MobileHamburger {
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .Navbar_Img {
+        width: 66%;
+    }
+}
+
+.ActiveNav {
+    display: flex;
+    top: 10vh;
+}
+
+.NameHolder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Name {
+    position: relative;
+    color: var(--background--);
+    font-size: 6vw;
+}
+
+#Fullname {
+    display: inline-block;
+}
+
+.Introduction {
+    position: absolute;
+    top: -10vh;
+    left: 0;
+    color: var(--text--);
+    font-size: 5vw;
+}
+
+.Subtitle {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -30;
+    left: 0;
+    font-size: 2vw;
+    color: rgb(130,130,130);
+}
+
+.ActiveScreen {
+    display: block;
+    position: relative;
+}
+
+.ActiveLink {
+    position: relative;
+}
+
+.ActiveLink::after {
+    content: "";
+    position: absolute;
+    top: 30;
+    left: 0!important;
+    width: 100%!important;
+    height: 2px;
+}
+
+.About_Me {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 5%;
+}
+
+.About_Screen {
+    width: 45%;
+}
+
+.About_Me-text {
+    color: var(--text--);
+    font-size: 1.5vw;
+}
+
+.About_Me_Img {
+    width: 100%;
+    border-radius: 100%;
+    background-color: var(--PrimaryHue--);
+}
+
+.ImgText {
+    margin-top: 2.5%;
+    color: rgb(130,130,130);
+    font-size: 1vw;
+    text-align: center;
+}
+
+.Text_Title {
+    margin: 0 0 5% 0;
+    font-size: 5vw;
+    color: var(--PrimaryHue--);
+}
+
+@media screen and (max-width: 900px) {
+    .About_Me {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        height: 100%;
+    }
+    .About_Screen {
+        width: 70%;
+    }
+    .Text_Title {
+        text-align: center;
+        font-size: 8vw;
+    }
+    .About_Me_Img {
+        width: 70%;
+        margin-left: 15%;
+        border-radius: 100%;
+    }
+    .About_Me-text {
+        color: var(--text--);
+        font-size: 2vw;
+    }
+    .ImgText {
+        font-size: 2vw;
+        margin-bottom: 2.5%;
+    }
+}
+
+.Contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContactTitle {
+    font-size: 5vw;
+    color: var(--PrimaryHue--);
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.ContactSplit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ContactDiv {
+    width: 40%;
+    background-color: var(--navbar--);
+    border-radius: 5%;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Quicksand;
+    margin-bottom: 30px;
+    font-size: 1.5vw;
+    border: 0;
+}
+
+.formarea {
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: Quicksand;
+    margin-bottom: 30px;
+    font-size: 1.5vw;
+    border: 0;
+    resize: none;
+}
+
+.formsubmit {
+    position: relative;
+    left: 0;
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+    font-family: Quicksand;
+    font-size: 1.5vw;
+    border: 0;
+    background-color: var(--PrimaryHue--);
+    color: var(--text--);
+}
+
+.ContactContext {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--text--);
+    margin-left: 5px;
+    font-size: 1.5vw;
+}
+
+.ContactReason {
+    overflow: hidden;
+    width: 40%;
+}
+
+.ReasonTitle {
+    font-size: 3vw;
+    color: var(--PrimaryHue--);
+    margin-bottom: 25px;
+}
+
+.ContactReasons li {
+    font-size: 1.5vw;
+    color: var(--text--);
+    margin-bottom: 25px;
+}
+
+.ElseMail {
+    color: var(--text--);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1vw;
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .Contact {
+        align-items: unset;
+    }
+    .ContactTitle {
+        text-align: center;
+        margin: 7.5% 0 5% 0;
+        font-size: 10vw;
+    }
+    .ContactSplit {
+        flex-direction: column-reverse
+    }
+    .ContactReason {
+        width: 100%;
+    }
+    .ContactReasons {
+        padding: 0;
+        margin: 0 0 5% 0;
+        text-decoration: none;
+        text-align: center;
+    }
+    .ContactReasons li {
+        font-size: 2.5vw;
+        margin-bottom: 10px;
+    }
+    .ContactDiv {
+        width: 90%;
+        padding: 5%;
+    }
+    .ContactContext {
+        font-size: 2.5vw;
+    }
+    .formsubmit {
+        width: 25%;
+        height: 10%;
+        padding: 5% 0 5% 0;
+        font-size: 4vw;
+    }
+    .ReasonTitle {
+        font-size: 5vw;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    .ElseMail {
+        font-size: 2vw;
+    }
+}
+
+.Portfolio {
+    width: 100%;
+    height: 100%;
+    padding: 0 5%;
+}
+
+.PortfolioTitle {
+    color: var(--PrimaryHue--);
+    padding: 5% 0 0% 0;
+    margin: 0;
+    width: 100%;
+    font-weight: 400;
+    font-family: Quicksand;
+    font-size: 5vw;
+    text-align: center;
+    z-index: 1;
+    background-color: var(--background--);
+}
+
+.PortfolioTextTitle {
+    color: var(--PrimaryHue--);
+    padding: 2.5% 0 5% 0;
+    margin: 0;
+    width: 100%;
+    font-weight: 400;
+    font-family: Quicksand;
+    font-size: 4vw;
+    text-decoration: underline var(--text--);
+    text-align: center;
+    z-index: 1;
+    background-color: var(--background--);
+}
+
+.PortfolioSubTitle {
+    color: var(--text--);
+    margin: 0 0 5% 0;
+    width: 100%;
+    font-weight: 400;
+    font-family: Quicksand;
+    font-size: 2vw;
+    text-align: center;
+    z-index: 1;
+    background-color: var(--background--);
+}
+
+.Projects {
+    overflow-y: auto;
+    /* overflow-x: hidden; */
+}
+
+.Project {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}
+
+.Reverse {
+    flex-direction: row-reverse;
+}
+.Reverse .Picture {
+    margin: 0 0 0 10%;
+}
+
+.Picture {
+    flex: 1;
+    height: 100%;
+    width: 45%;
+    margin-right: 10%;
+}
+
+#Img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.Text {
+    width: 45%;
+    flex: 1;
+}
+
+.Text h1{ 
+    color: var(--PrimaryHue--);
+    font-size: 3vw;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 5%;
+}
+
+.Text p{ 
+    color: var(--text--);
+    font-size: 1.25vw;
+    overflow: auto;
+    text-align: justify;
+}
+
+.Text a {
+    color: var(--text--);
+    font-size: 1.25vw;
+    overflow: auto;
+    text-align: justify;
+    text-decoration: underline var(--text--);
+}
+
+.Text a:hover {
+    color: var(--PrimaryHue--);
+    text-decoration: underline var(--PrimaryHue--);
+}
+
+.outlink {
+    color: var(--text--);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.TransitionScreen {
+    position: absolute;
+    height: 100%;
+    width: 0;
+    left: 150;
+    margin-left: 0;
+    z-index: 9;
+    background-color: var(--PrimaryHue--);
+}
+@media screen and (max-width: 900px) {
+    .TransitionScreen {
+        left: 0;
+        top: 10vh;
+        margin-top: 0;
+        width: 100%;
+        height: 0;
+    }
+    .Text p {
+        font-size: 1.75vw;
+    }
+}
+
+.transition {
+    animation-name: Transition;
+    animation-duration: 1s;
+}
+@keyframes Transition {
+    0% {width: 0; margin-left: 0;}
+    50% {width: calc(100vw - 150px);margin-left: 0;}
+    100% {width: 0;margin-left: calc(100vw - 150px);}
+}
+
+.mobiletransition {
+    animation-name: MobileTransition;
+    animation-duration: 1s;
+}
+@keyframes MobileTransition {
+    0% {height: 0; margin-top: 0;}
+    50% {height: 100%; margin-top: 0;}
+    100% {height: 0; margin-top: 100vh;}
+}
+
+.startnavbar {
+    animation-name: Startnavbar;
+    animation-duration: 1s;
+}
+@keyframes Startnavbar {
+    0% {left: -150;}
+    100% {width: 150;}
+}
+
+.logoname {
+    animation-name: Logoname;
+    animation-duration: 1s;
+}
+@keyframes Logoname {
+    0% {left: 100%;}
+    100% {left: 0;}
+}
+
+.navbarlogo {
+    animation-name: Navbarlogo;
+    animation-duration: 1s;
+}
+@keyframes Navbarlogo {
+    0% {transform: rotate(-360deg);}
+    100% {transform: rotate(0deg);}
+}
+
+.hityping {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: 
+        HiTyping 0.5s steps(4, end);
+}
+@keyframes HiTyping {
+    0% {width: 0;}
+    100% {width: 100%;}
+}
+
+.iamtyping {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: 
+        IamTyping 1.5s steps(4, end);
+}
+@keyframes IamTyping {
+    0% {width: 0;}
+    66% {width: 0;}
+    100% {width: 100%;}
+}
+
+#NameTransition {
+    position: absolute;
+    width: 0;
+    background-color: var(--PrimaryHue--);
+    top: 50%;
+    margin-left: 0;
+}
+.nametransition {
+    animation:
+        Nametransition 1s;
+}
+@keyframes Nametransition {
+    0% {width: 0; margin-left: 0;}
+    50% {width: 100%;margin-left: 0;}
+    100% {width: 0;margin-left: 100%;}
+}
+
+.subtitledrop {
+    animation-name: Subtitledrop;
+    animation-duration: 2s;
+}
