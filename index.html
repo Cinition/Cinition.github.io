@@ -13,6 +13,7 @@
                 <p id="L1" class="noselect">Homepage</p>
                 <p id="L2" class="noselect">About me</p>
                 <p id="L3" class="noselect">Portfolio</p>
+                <p id="L4" class="noselect">Progress</p>
             </div>
             <div class="Navbar_Social">
                 <a href="https://github.com/Cinition"><i class="fab fa-github"></i></a>
@@ -127,41 +128,9 @@
                 </div>
             </div>
         </div>
-        <!-- <div id="S4" class="Screen">
-            <div class="Contact">
-                <div>
-                    <p class="ContactTitle">Contact me</p>
-                    <div class="ContactSplit">
-                        <form id="form" class="ContactDiv">
-                            <div class="ContactForm">
-                                <div class="ContactContext">
-                                    <p>Title</p>
-                                </div>
-                                <input class="form" type="text" name="name">
-                                <div class="ContactContext">
-                                    <p>Email</p>
-                                </div>
-                                <input class="form" type="text" name="mail">
-                                <div class="ContactContext">
-                                    <p>Message</p>
-                                </div>
-                                <textarea class="formarea" name="message" rows="7"></textarea>
-                            </div>
-                            <input id="submitbutton" class="formsubmit" type="submit" name="submit" value="Send">
-                            <a class="ElseMail" href="mailto:cornee.n@gmail.com">Else, launch mailing program of choice</a> 
-                        </form>
-                        <div class="ContactReason">
-                            <p class="ReasonTitle">Reasons for contacting me</p>
-                            <ul class="ContactReasons">
-                                <li>You have a project idea that you would like to have created</li>
-                                <li>You just want to say hi or want to message me</li>
-                                <li>Or you just want a doggo picture</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+        <div id="S4" class="Screen">
+
+        </div>
         <div id="LastReady"></div>
     </body>
     <!-- Jquery script -->
@@ -243,12 +212,12 @@
             changeScreen(event.target)
         }
         function addEventListeners() {
-            for (let i = 1; i <= 3; i++) {
+            for (let i = 1; i <= 4; i++) {
                 document.getElementById("L" + i).addEventListener("click", getEvent) 
             }
         }
         function removeEventListeners() {
-            for (let i = 1; i <= 3; i++) {
+            for (let i = 1; i <= 4; i++) {
                 document.getElementById("L" + i).removeEventListener("click", getEvent)
             }
         }
