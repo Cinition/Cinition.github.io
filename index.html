@@ -50,7 +50,7 @@
             </div>
         </div>
         <div id="S3" class="Screen">
-            <div class="Portfolio">
+            <div id="ResetScroll" class="Portfolio">
                 <div id="ParentProjects" class="Projects">
                     <h1 class="PortfolioTitle">Some of my work</h1>
                     <h1 class="PortfolioSubTitle">It ain't much but it's honest work</h1>
@@ -189,13 +189,13 @@
         }
 
         function changeScreen(event) {
-            console.log(event)
             var elements = document.getElementsByClassName("Screen")
             for (let i = 0; i < elements.length; i++) {
                 if (elements[i].id[1] == event.id[1]) {
                     transition(event.id[1]);
                 } else {
                     setTimeout(function() {
+                        window.scrollTo(0,0);
                         document.getElementById("S" + elements[i].id[1]).classList.remove("ActiveScreen")
                         document.getElementById("L" + elements[i].id[1]).classList.remove("ActiveLink")
                     }, 500)
