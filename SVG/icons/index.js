@@ -1,0 +1,1 @@
+export { faPSQ } from "./fa-psq";
