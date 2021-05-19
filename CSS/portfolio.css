@@ -111,15 +111,6 @@ p {
     font-size: 30px;
     margin: 15px;
 }
-.Navbar_Social a img{
-    color: var(--text--);
-    height: 30px;
-    width: 30px;
-    font-size: 30px;
-}
-.PSQSocial:hover {
-    background-image: url(https://cinition.github.io/IMG/psq_logo_select.svg);
-}
 .Navbar_Social a:hover {
     cursor: pointer;
     color: var(--PrimaryHue--);
