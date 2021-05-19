@@ -1,5 +1,5 @@
 :root {
-    --PrimaryHue--: #bb1c44;
+    --PrimaryHue--: #BB1C44;
     --SecondaryHue--: #570f61;
     --navbar--: #303030;
     --background--:#242424;
@@ -116,15 +116,8 @@ p {
     color: var(--PrimaryHue--);
 }
 .Navbar_Social a img{
-    color: var(--text--);
     height: 30px;
     width: 30px;
-    font-size: 30px;
-    margin: 15px;
-}
-.Navbar_Social a img:hover {
-    cursor: pointer;
-    content: url("https://cinition.github.io/IMG/psq_logo_selected.svg");
 }
 .Navbar_Social a:last-child {
     margin-bottom: 0;
