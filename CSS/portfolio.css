@@ -73,6 +73,7 @@ p {
     margin: 10px;
     position: relative;
 }
+
 .Navbar_Link p::after {
     content: "";
     position: absolute;
@@ -83,10 +84,12 @@ p {
     background-color: var(--PrimaryHue--);
     transition: width 0.25s, left 0.25s;
 }
+
 .Navbar_Link p:hover::after {
     width: 100%;
     left: 0;
 }
+
 .Navbar_Link p:hover {
     cursor: pointer;
 }
@@ -108,11 +111,18 @@ p {
     font-size: 30px;
     margin: 15px;
 }
+.Navbar_Social a img{
+    color: var(--text--);
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+}
+.PSQSocial:hover {
+    background-image: url(https://cinition.github.io/IMG/psq_logo_select.svg);
+}
 .Navbar_Social a:hover {
     cursor: pointer;
-    -webkit-filter: drop-shadow(0px 4px 1px var(--PrimaryHue--));      
-    filter: drop-shadow(0px 4px 1px var(--PrimaryHue--)); 
-    /* color: var(--select--) */
+    color: var(--PrimaryHue--);
 }
 .Navbar_Social a:last-child {
     margin-bottom: 0;
