@@ -278,6 +278,7 @@ p {
     font-size: 1.25vw;
     margin-bottom: 25px;
 }
+
 .About_Me-text p:last-child {
     margin-bottom: 0;
 }
@@ -531,6 +532,7 @@ p {
 .Project {
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 7.5%;
 }
@@ -575,11 +577,12 @@ p {
 }
 
 .Text a {
-    color: var(--text--);
     font-size: 1.25vw;
     overflow: auto;
     text-align: justify;
-    text-decoration: underline var(--text--);
+    color: var(--PrimaryHue--);
+    text-decoration: none;
+    /* text-decoration: underline var(--text--); */
 }
 
 .Text a:hover {
