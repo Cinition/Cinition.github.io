@@ -145,7 +145,14 @@
             </div>
         </div>
         <div id="S4" class="Screen">
+            <div class="BlogTitle">
+                <h1>Progress Blog</h1>
+                <h3>Currently working on:</h3>
+                <h3>TenGine World Builder</h3>
+            </div>
+            <div class="BlogContent">
 
+            </div>
         </div>
         <div id="LastReady"></div>
     </body>
@@ -163,12 +170,11 @@
 
         function changeScreen(event) {
             var elements = document.getElementsByClassName("Screen")
-            for (let i = 0; i < elements.length; i++) {
+            for (let i = 0; i < 4; i++) {
                 if (elements[i].id[1] == event.id[1]) {
                     transition(event.id[1]);
                 } else {
                     setTimeout(function() {
-                        window.scrollTo(0,0);
                         document.getElementById("S" + elements[i].id[1]).classList.remove("ActiveScreen")
                         document.getElementById("L" + elements[i].id[1]).classList.remove("ActiveLink")
                     }, 500)
@@ -186,7 +192,7 @@
             setTimeout(function() {
                 document.getElementById("S" + id).classList.add("ActiveScreen")
                 document.getElementById("L" + id).classList.add("ActiveLink")
-                if (id == 4) {
+                if (id == 5) {
                     AdjustMargin()
                 }
                 setTimeout(function() {
@@ -274,6 +280,7 @@
     <!-- Responsiveness script -->
     <script>
         function AdjustMargin() {
+            console.log("awdawdad");
             $("#Introduction").css("top", -($("#Introduction").height()));
             $("#Subtitle").css("bottom", -($("#Subtitle").height()));
             $("#NameTransition").height($("#Fullname").height());
