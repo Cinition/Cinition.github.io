@@ -49,15 +49,31 @@
                         I am an aspiring Application/Software Engineer that wants to make software for designer and artist to make their jobs better even if its just a little bit. 
                         To do that i have these skills to make those applications a reality.
                     </p>
-                    <!-- <a class="outlink" onclick="changeScreen(document.getElementById('L4'))">Click here!</a> -->
+
+                    <p class="About_Me-text">
+                        i am currently working on a big project. It is a World Builder for PSQs proprietary engine, TenGine. 
+                        <a class="outlink" onclick="changeScreen(document.getElementById('L4'))">Click here to check it out</a>
+                    </p>
+                    
                 </div>
                 <div id="RandomDiv" class="About_Screen">
                     <img id="MeImg" class="About_Me_Img" src="IMG/face.png">
-                    <p class="Text_SubTitle">Some of my strengths</p>
-                    <p class="About_Me-text">
-                        I am an aspiring Application/Software Engineer that wants to make software for designer and artist to make their jobs better even if its just a little bit. 
-                        To do that i have these skills to make those applications a reality.
-                    </p>
+                    <p class="Text_SubTitle">My strengths</p>
+                    <div class="About_Me_List">
+                        <ul>
+                            <li>Ambitious</li>
+                            <li>Independant</li>
+                            <li>Quick Learner</li>
+                            <li>Good Communicator</li>
+                        </ul>
+                        <ul>
+                            <li>C++</li>
+                            <li>C#</li>
+                            <li>HTML/CSS</li>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,7 +95,7 @@
                                 then convert it into a TenGine Map Format. or, 2. Ask an artist to add it and wait till it was done. So to combat this huge waste of time for multiple disciplines we thought of this idea, but due to
                                 time constraints we had to scrap it. But i have recently decided to give it another go and make the editing of maps a piece of cake in TenGine for anyone.
                                 <br><br>
-                                <a class="HueText" target="_blank" href="ProgressBlog.html">Checkout the progress blog for the world builder</a>
+                                <a class="HueText" style="cursor: pointer;" onclick="changeScreen(document.getElementById('L4'))">Checkout the progress blog for the world builder</a>
                             </p>
                         </div>
                     </div>
@@ -122,7 +138,6 @@
                             <p>
                                 Subaquatic Secrets is a underwater exploration game, where you control a submersible through deep and vast oceans to discover dangers but also marvels of those deep oceans. 
                                 The game has tasks that guide the player through the level, but loosely as to emphasize the exploration and non-restrictiveness of the levels. <br><br>
-                                <a class="HueText" target="_blank" href="SubaquaticSecrets.html">More what i did on this project</a>
                             </p>
                         </div>
                     </div>
@@ -137,7 +152,6 @@
                                 creativity and coordination to reach their goal of gathering three enchanted gems that will unlock a mysterious tomb. To aid them in their quest, 
                                 the player has the ability to conjure magical crystal pillars that grow out from the environment. 
                                 These pillars act as multipurpose platforms that can help the player bypass traps, navigate the environment and outsmart puzzles.<br><br>
-                                <a class="HueText" target="_blank" href="Heliotrope.html">More on what i did on Heliotrope</a>
                             </p>
                         </div>
                     </div>
@@ -145,13 +159,38 @@
             </div>
         </div>
         <div id="S4" class="Screen">
-            <div class="BlogTitle">
-                <h1>Progress Blog</h1>
-                <h3>Currently working on:</h3>
-                <h3>TenGine World Builder</h3>
-            </div>
             <div class="BlogContent">
-
+                <div class="BlogTitle">
+                    <h1>Progress Blog</h1>
+                    <h3>TenGine World Builder</h3>
+                </div>
+                <div class="BlogText">
+                    <span class="BlogDate">5-5-2021</span>
+                    <div class="BlogTextImage w40">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et felis non ligula luctus ultricies in in lorem. 
+                            Quisque vitae felis in purus scelerisque consectetur non eu diam. Ut ultricies eros quis nisi dictum gravida. 
+                            Proin vel feugiat massa, vel hendrerit velit. Nam nec viverra enim, non tristique ligula. 
+                            Vestibulum eget placerat nulla. Nam in enim nec mauris molestie vestibulum eu non sem. 
+                            Quisque eu pretium risus. Quisque lacus ex, lobortis vitae lectus sed, volutpat lobortis risus. 
+                            Aliquam pellentesque nulla ut ligula placerat rhoncus sed eu mauris.
+                        </p>
+                        <img src="IMG/face.png">
+                    </div>
+                    <p class="BlogTextNoImage">
+                        Maecenas lacinia molestie diam, sed luctus libero vehicula at. Quisque ac ornare sem. Integer eu fermentum sapien, 
+                        finibus ex. Duis mollis lorem sed tortor faucibus ornare. Sed vel eros efficitur, blandit leo nec, 
+                        faucibus tortor. Sed tempor tristique consequat. Aenean in est eu lectus congue molestie. 
+                        Donec nec orci a neque lobortis convallis. Donec id vestibulum urna. Sed et faucibus mauris. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed nibh felis.
+                    </p>
+                    <p class="BlogTextNoImage">
+                        Nam a rutrum risus, non accumsan est. Maecenas vel turpis posuere, mollis nisi tincidunt, vestibulum augue. 
+                        Ut blandit dignissim turpis quis efficitur. Mauris non enim vel nulla lobortis volutpat. 
+                        Fusce vulputate velit dictum suscipit ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
+                        per inceptos himenaeos. Mauris ac commodo lacus.
+                    </p>
+                </div>
             </div>
         </div>
         <div id="LastReady"></div>
@@ -175,6 +214,7 @@
                     transition(event.id[1]);
                 } else {
                     setTimeout(function() {
+                        window.scrollTo(0,0);
                         document.getElementById("S" + elements[i].id[1]).classList.remove("ActiveScreen")
                         document.getElementById("L" + elements[i].id[1]).classList.remove("ActiveLink")
                     }, 500)
