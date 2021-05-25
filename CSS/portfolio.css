@@ -1,5 +1,11 @@
 :root {
-    --PrimaryHue--: #BB1C44;
+    --PrimaryHue--: #CBAC57;
+    /* 
+        --PrimaryHue--: #BB1C44;
+        Old Primary color 
+        Remember to change seperatly for C Icon and PSQ logo
+        Also line 290 in JS
+    */
     --SecondaryHue--: #570f61;
     --navbar--: #303030;
     --background--:#242424;
@@ -486,13 +492,14 @@ p {
 
 .BlogTitle h1 {
     font-size: 4vw;
+    font-weight: 400;
     margin: 25px 0 0 0;
     color: var(--PrimaryHue--);
 }
 
 .BlogTitle h3 {
     font-size: 2vw;
-    font-weight: 300;
+    font-weight: 400;
     margin: 25px 0 0 0;
     color: var(--text--);
 }
