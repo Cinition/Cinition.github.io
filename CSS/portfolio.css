@@ -425,6 +425,9 @@ p {
     margin-right: 10%;
 }
 
+.Picture iframe {
+}
+
 #Img {
     width: 100%;
     border-radius: 25px;
