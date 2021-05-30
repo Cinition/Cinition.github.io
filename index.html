@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.2/css/all.css">
     </head>
     <body>
+        <!-- NavBar -->
         <div id="Navbar" class="Navbar">
             <img class="Navbar_Img" id="NavBarLogo" src="CSS/Logo.svg">
             <a id="MobileNavButton" class="MobileHamburger"><i class="fas fa-bars"></i></a>
@@ -23,6 +24,7 @@
             </div>
         </div>
         <div id="TransitionScreen" class="TransitionScreen"></div>
+        <!-- Frontpage -->
         <div id="S1" class="Screen">
             <div id="NameTransition"></div>
             <div class="NameHolder">
@@ -38,6 +40,7 @@
                 </span>
             </div>
         </div>
+        <!-- About Me -->
         <div id="S2" class="Screen">
             <div class="About_Me">
                 <div class="About_Screen">
@@ -77,6 +80,7 @@
                 </div>
             </div>
         </div>
+        <!-- Portfolio -->
         <div id="S3" class="Screen">
             <div id="ResetScroll" class="Portfolio">
                 <div id="ParentProjects" class="Projects">
@@ -85,7 +89,7 @@
                     <h1 class="PortfolioTextTitle">Application Development</h1>
                     <div class="Project">
                         <div class="Picture">
-                            <img id="Img" src="IMG/tenginewb2.png">
+                            <img id="Img" src="IMG/tenginewb3.png">
                         </div>
                         <div class="Text">
                             <h1>TenGine World Builder</h1>
@@ -158,13 +162,25 @@
                 </div>
             </div>
         </div>
+        <!-- Blog -->
         <div id="S4" class="Screen">
             <div class="BlogContent">
                 <div class="BlogTitle">
                     <h1>Progress Blog</h1>
                     <h3>TenGine World Builder</h3>
                 </div>
-                
+
+                <div class="BlogText">
+                    <span class="BlogDate">28-5-2021</span>
+                    <div class="BlogTextImage">
+                        <p>
+                            Last 2 days i slowly but finally finished up the main design of the application. Next up ill work on the design of the dropdowns, 
+                            and finish that up with a google form to get mass feedback from the school on what should be improved/added.
+                        </p>
+                        <img src="IMG/tenginewb3.png">
+                    </div>
+                </div>
+
                 <div class="BlogText">
                     <span class="BlogDate">26-5-2021</span>
                     <p class="BlogTextNoImage">
@@ -315,22 +331,6 @@
             }, 500)
         }
     </script>
-    <!-- Randomizer for about me doggo picture -->
-    <!-- <script>
-        var number = 1 + Math.floor(Math.random() * 2);
-        number = 69;
-        switch (number) {
-            case 1:
-                $("#MeImg").attr("src","/IMG/1.png")
-                break;
-            case 2:
-                $("#MeImg").attr("src","/IMG/2.png")
-                break;
-            default:
-                $("#MeImg").attr("src","/IMG/me.jpg")
-                break;
-        }
-    </script> -->
     <!-- Responsiveness script -->
     <script>
         function AdjustMargin() {
