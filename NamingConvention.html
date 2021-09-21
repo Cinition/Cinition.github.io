@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="shortcut icon" type="image/png" href="CSS/Logo.svg"/>
+        <link rel="stylesheet" type="text/css" href="CSS/namingconvention.css">
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.2/css/all.css">
+    </head>
+    <body onload="AutoList();">
+        <div class="NavParting">
+            <!-- Nav/Headline Bar -->
+            <div class="NavHeadlineBar">
+                <ul id="NavList">
+                </ul>
+            </div>
+            <div class="Container" >
+        
+                <h1 class="Title">Naming Convention</h1>
+                <h1 class="Subtitle">Game Project 3: Infinite Monkey</h1>
+    
+                <div class="Page">
+                    <h1 class="PageTitle">Introduction</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, explicabo!</p>
+                    <p>Aut fuga mollitia velit sed aspernatur? Dolores quo natus pariatur?</p>
+                    <p>Eligendi odio ullam voluptatum dignissimos expedita laboriosam omnis distinctio sit.</p>
+                    <p>Vitae veniam voluptate animi modi, ratione hic suscipit qui tempore?</p>
+                </div>
+        
+                <div class="Page">
+                    <h1 class="PageTitle">Code Convention</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, explicabo!</p>
+                    <p>Aut fuga mollitia velit sed aspernatur? Dolores quo natus pariatur?</p>
+                    <p>Eligendi odio ullam voluptatum dignissimos expedita laboriosam omnis distinctio sit.</p>
+                    <p>Vitae veniam voluptate animi modi, ratione hic suscipit qui tempore?</p>
+                </div>
+        
+                <div class="Page">
+                    <h1 class="PageTitle">Other Stuff</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, explicabo!</p>
+                    <p>Aut fuga mollitia velit sed aspernatur? Dolores quo natus pariatur?</p>
+                    <p>Eligendi odio ullam voluptatum dignissimos expedita laboriosam omnis distinctio sit.</p>
+                    <p>Vitae veniam voluptate animi modi, ratione hic suscipit qui tempore?</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- Jquery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Nav auto list script -->
+    <script>
+        function AutoList(params) {
+            var titles = document.getElementsByClassName("PageTitle");
+            var list = document.getElementById("NavList")
+            for(var i = 0; i < titles.length; i++) {
+                var li = document.createElement("li");
+                var text = document.createElement("p");
+
+                text.innerHTML = titles.item(i).innerHTML;
+                text.onclick = function() {console.log(titles.item(i).getBoundingClientRect().top)}
+
+                li.appendChild(text);
+                list.appendChild(li);
+            }
+        }
+        function GoToListItem(elementBounding) {
+            console.log(elementBounding.top);
+        }
+    </script>
+</html>

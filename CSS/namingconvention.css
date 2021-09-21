@@ -1,0 +1,93 @@
+:root {
+    /* LightMode */
+    --backgroundLight:#242424;
+    --pageLight: #3f3f3f;
+    --headerLight: #bb1c44;
+    --textLight:#DADADA;
+    /* DarkMode */
+    --backgroundDark:#242424;
+    --pageDark: #2b2b2b;
+    --headerDark: #bb1c44;
+    --textDark:#DADADA;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Quicksand:wght@300;400;500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--headerDark);
+    margin: 0;
+}
+h1 .LightMode {
+    color: var(--headerLight);
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--textDark);
+}
+p .LightMode {
+    color: var(--textLight);
+}
+
+.NavParting {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.NavHeadlineBar {
+    background-color: var(--pageDark);
+    width: 250px;
+    height: 300px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 180px;
+}
+
+.Container {
+    width: 700px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.Title {
+    margin: 30px 0 10px 0;
+    font-size: 3.5em;
+}
+
+.Subtitle {
+    margin-bottom: 50px;
+    font-size: 1.5em;
+}
+
+.Page {
+    width: 100%;
+    background-color: var(--pageDark);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.PageTitle {
+    margin: 10px;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.Page p {
+    font-size: 1em;
+    text-align: justify;
+}
