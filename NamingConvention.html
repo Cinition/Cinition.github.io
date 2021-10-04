@@ -171,16 +171,131 @@
                     <p class="tip">Check always if a blueprint is locked, and if not check if you yourself have it locked before working on it</p>
                     <p class="tip">To make things more readable straigthen out pin connection, create pin node's. All these have hotkeys to make this less tedious</p>
 
-
-
                     <h2 class="PageSubTitle">C++ Conventions</h2>
 
-                    <p>Here are some quick tips to keep our C++ files consistent between people.</p>
+                    <p>Here are some quick tips to keep our C++ files consistent between people, or atleast, the headers.</p>
                     <p class="tip">We will keep comments in the header file only, make header files very convenient and cpp files less cluttered</p>
                     <p class="tip">Comment as concise but correctly what a method or variable does/returns</p>
 
                     <h2 class="PageSubTitle">UProperty Cheatsheet</h2>
-                
+                    <p>When declaring properties, Property Specifiers can be added to the declaration to control how the property behaves with various aspects of the Engine and Editor.</p>
+                    <p>It is ordered in most used, pls msg if some have higher priority</p>
+                    <div class="Table UProperty">
+                        <div class="Row">
+                            <p>Property Tag</p>
+                            <p>Effect</p>
+                        </div>
+                        <div class="Row">
+                            <p>EditAnywhere</p>
+                            <p>Indicates that this property can be edited by property windows, on archetypes and instances. This Specifier is incompatible with any of the the "Visible" Specifiers.</p>
+                        </div>
+                        <div class="Row">
+                            <p>BlueprintReadWrite</p>
+                            <p>This property can be read or written from a Blueprint. This Specifier is incompatible with the BlueprintReadOnly Specifier.</p>
+                        </div>
+                        <div class="Row">
+                            <p>BlueprintReadOnly</p>
+                            <p>This property can be read by Blueprints, but not modified. This Specifier is incompatible with the BlueprintReadWrite Specifier</p>
+                        </div>
+                        <div class="Row">
+                            <p>Category= "TopCategory| SubCategory|..."</p>
+                            <p>Specifies the category of the property when displayed in Blueprint editing tools. Define nested categories using the | operator.</p>
+                        </div>
+                        <div class="Row">
+                            <p>BlueprintAssignable</p>
+                            <p>Usable with Multicast Delegates only. Exposes the property for assigning in Blueprints.</p>
+                        </div>
+                        <div class="Row">
+                            <p>EditDefaultsOnly</p>
+                            <p>Indicates that this property can be edited by property windows, but only on archetypes. This Specifier is incompatible with any of the "Visible" Specifiers. </p>
+                        </div>
+                        <div class="Row">
+                            <p>AdvancedDisplay</p>
+                            <p>The property will be placed in the advanced (dropdown) section of any panel where it appears.</p>
+                        </div>
+                        <div class="Row">
+                            <p>EditInline</p>
+                            <p>Allows the user to edit the properties of the Object referenced by this property within Unreal Editor's property inspector (only useful for Object references, including arrays of Object reference).</p>
+                        </div>
+                        <div class="Row">
+                            <p>EditInstanceOnly</p>
+                            <p>Indicates that this property can be edited by property windows, but only on instances, not on archetypes. This Specifier is incompatible with any of the "Visible" Specifiers.</p>
+                        </div>
+                        <div class="Row">
+                            <p>VisibleAnywhere</p>
+                            <p>Indicates that this property is visible in all property windows, but cannot be edited. This Specifier is incompatible with the "Edit" Specifiers.</p>
+                        </div>
+                        <div class="Row">
+                            <p>VisibleDefaultsOnly</p>
+                            <p>Indicates that this property is only visible in property windows for archetypes, and cannot be edited. This Specifier is incompatible with any of the "Edit" Specifiers.</p>
+                        </div>
+                        <div class="Row">
+                            <p>VisibleInstanceOnly</p>
+                            <p>Indicates that this property is only visible in property windows for instances, not for archetypes, and cannot be edited. This Specifier is incompatible with any of the "Edit" Specifiers.</p>
+                        </div>
+                        <div class="Row">
+                            <p>BlueprintAuthorityOnly</p>
+                            <p>This property must be a Multicast Delegate. In Blueprints, it will only accept events tagged with BlueprintAuthorityOnly.</p>
+                        </div>
+                        <div class="Row">
+                            <p>BlueprintCallable</p>
+                            <p>Multicast Delegates only. Property should be exposed for calling in Blueprint code.</p>
+                        </div>
+                        <div class="Row">
+                            <p>BlueprintGetter= GetterFunctionName</p>
+                            <p>This property specifies a custom accessor function. If this property isn't also tagged with BlueprintSetter or BlueprintReadWrite, then it is implicitly BlueprintReadOnly.</p>
+                        </div>
+                        <div class="Row">
+                            <p>BlueprintSetter= SetterFunctionName</p>
+                            <p>This property has a custom mutator function, and is implicitly tagged with BlueprintReadWrite. Note that the mutator function must be named and part of the same class.</p>
+                        </div>
+                        <div class="Row">
+                            <p>Config</p>
+                            <p>This property will be made configurable. The current value can be saved to the .ini file associated with the class and will be loaded when created. Cannot be given a value in default properties. Implies BlueprintReadOnly.</p>
+                        </div>
+                        <div class="Row">
+                            <p>DuplicateTransient</p>
+                            <p>Indicates that the property's value should be reset to the class default value during any type of duplication (copy/paste, binary duplication, etc.).</p>
+                        </div>
+                        <div class="Row">
+                            <p>EditFixedSize</p>
+                            <p>Only useful for dynamic arrays. This will prevent the user from changing the length of an array via the Unreal Editor property window.</p>
+                        </div>
+                    </div>
+
+                    <h2 class="PageSubTitle">UClass Cheatsheet</h2>
+                    <p>When declaring classes, Class Specifiers can be added to the declaration to control how the class behaves with various aspects of the Engine and Editor. </p>
+                    <p>It is ordered in most used, pls msg if some have higher priority</p>
+                    <div class="Table UProperty">
+                        <div class="Row">
+                            <p>Class Specifier</p>
+                            <p>Effect</p>
+                        </div>
+                        <div class="Row">
+                            <p>Blueprintable</p>
+                            <p>Exposes this class as an acceptable base class for creating Blueprints. The default is NotBlueprintable, unless inherited otherwise. This Specifier is inherited by subclasses.</p>
+                        </div>
+                        <div class="Row">
+                            <p>NotBlueprintable</p>
+                            <p>Specifies that this class is not an acceptable base class for creating Blueprints. This is the default and is inherited by subclasses.</p>
+                        </div>
+                        <div class="Row">
+                            <p>NotPlaceable</p>
+                            <p>Negates a Placeable Specifier inherited from a base class. Indicates that Objects of this class may not be placed into a Level, UI scene, or Blueprint in the Editor.</p>
+                        </div>
+                        <div class="Row">
+                            <p>BlueprintType</p>
+                            <p>Exposes this class as a type that can be used for variables in Blueprints.</p>
+                        </div>
+                        <div class="Row">
+                            <p>Placeable</p>
+                            <p>Indicates that this class can be created in the Editor and placed into a level, UI scene, or Blueprint (depending on the class type). This flag is propagated to all child classes; child classes can override this flag using the NotPlaceable Specifier.</p>
+                        </div>
+                        <div class="Row">
+                            <p>EditInlineNew</p>
+                            <p>Indicates that Objects of this class can be created from the Unreal Editor Property window, as opposed to being referenced from an existing Asset. The default behavior is that only references to existing Objects may be assigned through the Property window). This Specifier is propagated to all child classes; child classes can override this with the NotEditInlineNew Specifier.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="Page">

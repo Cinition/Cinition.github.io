@@ -45,7 +45,7 @@ p {
 .NavHeadlineBar {
     background-color: var(--page);
     width: 250px;
-    height: 400px;
+    height: 305px;
     border-radius: 20px;
     box-sizing: border-box;
     position: sticky;
@@ -62,7 +62,7 @@ p {
 }
 
 .NavItem {
-    padding-left: 10px;
+    padding-left: 15px;
     position: relative;
     cursor: pointer;
 }
@@ -204,4 +204,17 @@ b {
 .Table.Shader .Row p:nth-child(2) {
     width: 80%;
     padding-left: 7.5px;
+}
+
+.Table.UProperty .Row p:nth-child(1) {
+    width: 35%;
+    padding-left: 7.5px;
+}
+.Table.UProperty .Row p:nth-child(2) {
+    width: 65%;
+    padding-left: 7.5px;
+    font-size: 1em;
+}
+.Table.Table.UProperty .Row:first-child p:nth-child(2) {
+    font-size: 1.15em;
 }
