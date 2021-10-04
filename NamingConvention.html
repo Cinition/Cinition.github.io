@@ -9,8 +9,9 @@
         <div class="NavParting">
             <!-- Nav/Headline Bar -->
             <div class="NavHeadlineBar">
-                <ul id="NavList">
-                </ul>
+                <div id="NavList">
+                    <span class="NavTitle">Navigation</span>
+                </div>
             </div>
             <div class="Container" >
         
@@ -19,22 +20,156 @@
     
                 <div class="Page">
                     <h1 class="PageTitle">Introduction</h1>
+                    <p>Welcome! to the Naming Convention of Project 3, Infinite Monkeys, This page will reference all the convention this project should follow for every discipline.</p>
+                </div>
+        
+                <div class="Page">
+                    <!-- <h1 class="PageTitle">Git and Unreal</h1>
+
+                    <h2 class="PageSubTitle">The Issues</h2>
+                    <p>As you may know there have been lots of changes to how we use git with Unreal, main reason being that Unreal uses binary data to save progress un their files. And that means that git can't detect specific changes.</p>
+                    <p>Because of that Github Desktop can't properly detect differences in files, and add that other people can change the file at the same time as you, you get conflicts in files rapidly. </p>
+
+                    <h2 class="PageSubTitle">The Work around</h2>
+                    <p>From My research into how Unreal developers work around this design flaw, it appeared that they used perforce and more specifically the locking system of Perforce. The Locking system speaks for itself, a developer can lock a file for other developers so that they can't push any changes to the server.</p>
+                    <p>Meaning that the risk of conflicts goes away as there aren't any differences since you started working in that file.</p> -->
+                    
+                    <h1 class="PageTitle">Working Together in Unreal</h1>
+
+                    <h2 class="PageSubTitle">Tools</h2>
+                    <p>Unfortunatly, with Unreal being so restrictive with it's files we have to use tools, Fortunatly i like to make tools and make them accessible for every discipline</p>
+                    <p>The 2 tools that we will be using is, Github Desktop and GitLFS Locking App. Both of these application are easy to use and i will explain more in detail how you should use them, and what to do if an error popup reveals itself, In <span onload="HyperClick('Github Desktop')"></span> and <span onload="HyperClick('Git LFS Locking App')"></span>.</p>
+                    
+                    <h2 class="PageSubTitle">Work Process</h2>
+                    <p>Let's follow a standard day and see how you would go about using the tools to maximize efficiency in teamwork. In the morning the first thing you do is <b>Fetch</b> from the current development branch which is: <b>Alpha</b>. After we have had our standup meeting and you have decided what you are gonna do, there 2 ways forward.</p>
+                    <p>(1) If you have to add a file there is no need to Lock that file</p>
+                    <p>(2) If you have to edit a file you have to Lock that file</p>
+                    <p>When you think you are done for the time being <b>Push your Change</b> and if you are done with editing the file for today <b>Unlock the file</b> so that fellow developers can edit that file later down the line.</p>
+                </div>
+
+                <div class="Page">
+                    <h1 class="PageTitle">Github Desktop</h1>
+
+                    <h2 class="PageSubTitle">Quick Guide</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, explicabo!</p>
+                    <p>Aut fuga mollitia velit sed aspernatur? Dolores quo natus pariatur?</p>
+
+                    <h2 class="PageSubTitle">Error Handling</h2>
+                    <p>Eligendi odio ullam voluptatum dignissimos expedita laboriosam omnis distinctio sit.</p>
+                    <p>Vitae veniam voluptate animi modi, ratione hic suscipit qui tempore?</p>
+                    
+                    <h1 class="PageTitle">Git LFS Locking App</h1>
+
+                    <h2 class="PageSubTitle">Quick Guide</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, explicabo!</p>
+                    <p>Aut fuga mollitia velit sed aspernatur? Dolores quo natus pariatur?</p>
+
+                    <h2 class="PageSubTitle">Error Handling</h2>
+                    <p>Eligendi odio ullam voluptatum dignissimos expedita laboriosam omnis distinctio sit.</p>
+                    <p>Vitae veniam voluptate animi modi, ratione hic suscipit qui tempore?</p>
+                </div>
+
+                <div class="Page">
+                    <h1 class="PageTitle">Art Conventions</h1>
+                    <p>Here lies the Art Folder Hierarchy/File Naming Conventions created by the Art Lead: Justine, and then copy over to here</p>
+
+                    <h2 class="PageSubTitle">Folder Hierarchy</h2>
+
+                    <img src="IMG/ArtFileHierarchy.png" alt="Art File Hierarchy" class="ArtImage">
+
+                    <h2 class="PageSubTitle">File Naming</h2>
+                    <div class="ArtTable">
+                        <div class="ArtRow">
+                            <p>Prefix</p>
+                            <p>Type</p>
+                            <p>Template</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>S_</p>
+                            <p>Static Mesh</p>
+                            <p>S_[AssetName]_01.fbx</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>A_</p>
+                            <p>Animation</p>
+                            <p>A_[AssetName]_[Action]_01.fbx</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>M_</p>
+                            <p>Material</p>
+                            <p>M_[AssetName]_01 - Unique M_[TextureName]_01 - Tiled/Trim </p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>MS_</p>
+                            <p>Shader</p>
+                            <p>MS_[AssetName]</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>NE_</p>
+                            <p>Niagara Emitter</p>
+                            <p>NE_[EmitterName]</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>NS_</p>
+                            <p>Niagara System</p>
+                            <p>NS_[SystemName]</p>
+                        </div>
+                    </div>
+
+                    <p>Tiled Textures:<br>[TextureName]_01_D.tga       [TextureName] - Concrete, Wood etc</p>
+                    <p>Unique Textures:<br>[AssetName]_01_D.tga       01 - Model variation (if texture varies)</p>
+
+                    <h2 class="PageSubTitle">Shader Specifications</h2>
+                    <div class="ArtTable Shader">
+                        <div class="ArtRow">
+                            <p>Suffix</p>
+                            <p>Type</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>_D</p>
+                            <p>Diffuse/Albedo/Base Color (Can Include Opacity map in Alpha _DA)</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>_N</p>
+                            <p>Normal (Can include Roughness in Alpha _NR)</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>_R</p>
+                            <p>Roughness</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>_M</p>
+                            <p>Metallic</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>_E</p>
+                            <p>Emissive </p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>_A</p>
+                            <p>Alpha/Opacity</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>_RME</p>
+                            <p>Packed Texture. Depends on what maps are used. Order corresponds to RGBA</p>
+                        </div>
+                        <div class="ArtRow">
+                            <p>_MASK</p>
+                            <p>Mask texture exported from Substance</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="Page">
+                    <h1 class="PageTitle">Code Conventions</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, explicabo!</p>
                     <p>Aut fuga mollitia velit sed aspernatur? Dolores quo natus pariatur?</p>
                     <p>Eligendi odio ullam voluptatum dignissimos expedita laboriosam omnis distinctio sit.</p>
                     <p>Vitae veniam voluptate animi modi, ratione hic suscipit qui tempore?</p>
                 </div>
-        
+
                 <div class="Page">
-                    <h1 class="PageTitle">Code Convention</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, explicabo!</p>
-                    <p>Aut fuga mollitia velit sed aspernatur? Dolores quo natus pariatur?</p>
-                    <p>Eligendi odio ullam voluptatum dignissimos expedita laboriosam omnis distinctio sit.</p>
-                    <p>Vitae veniam voluptate animi modi, ratione hic suscipit qui tempore?</p>
-                </div>
-        
-                <div class="Page">
-                    <h1 class="PageTitle">Other Stuff</h1>
+                    <h1 class="PageTitle">Additional Conventions</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, explicabo!</p>
                     <p>Aut fuga mollitia velit sed aspernatur? Dolores quo natus pariatur?</p>
                     <p>Eligendi odio ullam voluptatum dignissimos expedita laboriosam omnis distinctio sit.</p>
@@ -47,22 +182,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Nav auto list script -->
     <script>
+
         function AutoList(params) {
             var titles = document.getElementsByClassName("PageTitle");
             var list = document.getElementById("NavList")
             for(var i = 0; i < titles.length; i++) {
-                var li = document.createElement("li");
                 var text = document.createElement("p");
+                text.classList.add("NavItem");
 
                 text.innerHTML = titles.item(i).innerHTML;
-                text.onclick = function() {console.log(titles.item(i).getBoundingClientRect().top)}
+                text.id = titles.item(i).getBoundingClientRect().top;
 
-                li.appendChild(text);
-                list.appendChild(li);
+                list.appendChild(text);
             }
         }
-        function GoToListItem(elementBounding) {
-            console.log(elementBounding.top);
+
+        function GoToListItem(elementTop) {
+            document.body.scrollTo({top:elementTop, left: 0, behavior: 'smooth'});
         }
+
+        function HyperClick(hyperClickTo) {
+            var items = document.getElementsByClassName("NavItem");
+            for (let i = 0; i < items.length; i++) {
+                
+            }
+        }
+
+    </script>
+    <script>
+        $("#NavList").on('click', 'p', function() {
+            GoToListItem(this.id);
+        });
     </script>
 </html>
