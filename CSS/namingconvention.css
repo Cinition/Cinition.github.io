@@ -128,6 +128,21 @@ p {
     padding-left: 20px;
 }
 
+.Page .tip {
+    margin: 10px 0 0 20px;
+    position: relative;
+}
+.Page .tip::after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: var(--text);
+    left: 5px;
+    top: 10px;
+}
+
 b {
     text-decoration: underline;
 }
