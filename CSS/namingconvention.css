@@ -137,7 +137,12 @@ b {
     margin: 20px 0 0 15px
 }
 
-.ArtTable {
+.FileImage {
+    width: 65%;
+    margin: 20px 0 0 15px
+}
+
+.Table {
     margin: 20px 0 10px 20px;
     width: 100%;
     border: 2px solid var(--text);
@@ -146,42 +151,42 @@ b {
     flex-direction: column;
 }
 
-.ArtTable .ArtRow {
+.Table .Row {
     display: flex;
     flex-direction: row;
     border-bottom: 2px solid var(--text);
 }
-.ArtTable .ArtRow:last-child {
+.Table .Row:last-child {
     border-bottom: 0;
 }
 
-.ArtTable .ArtRow p {
+.Table .Row p {
     border-right: 2px solid var(--text);
     margin: 0;
     padding: 5px 0;
     text-align: left;
 }
-.ArtTable .ArtRow p:last-child {
+.Table .Row p:last-child {
     border-right: 0;
 }
-.ArtTable .ArtRow p:nth-child(1) {
+.Table .Row p:nth-child(1) {
     width: 12.5%;
     text-align: center;
 }
-.ArtTable .ArtRow p:nth-child(2) {
+.Table .Row p:nth-child(2) {
     width: 35%;
     padding-left: 7.5px;
 }
-.ArtTable .ArtRow p:nth-child(3) {
+.Table .Row p:nth-child(3) {
     width: 52.5%;
     padding-left: 7.5px;
 }
 
-.ArtTable.Shader .ArtRow p:nth-child(1) {
+.Table.Shader .Row p:nth-child(1) {
     width: 20%;
     text-align: center;
 }
-.ArtTable.Shader .ArtRow p:nth-child(2) {
+.Table.Shader .Row p:nth-child(2) {
     width: 80%;
     padding-left: 7.5px;
 }
